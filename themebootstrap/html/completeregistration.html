@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="" />
+    <meta
+      name="keywords"
+      content="admin template,html 5 admin template , dmeki admin , dashboard template, bootstrap 5 admin template, responsive admin template"
+    />
+    <title>Shopezy |Register</title>
+    <!-- shortcut icon-->
+    <link
+      rel="icon"
+      href="../assets/images/logo/rezy.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/logo/rezy.png"
+      type="image/x-icon"
+    />
+    <!-- Fonts css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font awesome -->
+    <link href="../assets/css/vendor/font-awesome.css" rel="stylesheet" />
+    <!-- themify icon-->
+    <link href="../assets/css/vendor/themify-icons.css" rel="stylesheet" />
+    <!-- Scrollbar-->
+    <link href="../assets/css/vendor/simplebar.css" rel="stylesheet" />
+    <!-- Bootstrap css-->
+    <link href="../assets/css/vendor/bootstrap.css" rel="stylesheet" />
+    <!-- Custom css-->
+    <link href="../assets/css/style.css" id="customstyle" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- authentication start-->
+    <section class="py-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="codex-authbox">
+              <div class="auth-header">
+                <div class="codex-brand">
+                  <a href="index.html"
+                    ><img
+                      class="img-fluid light-logo"
+                      src="../assets/images/logo/rezy.png"
+                      alt="" /><img
+                      class="img-fluid dark-logo"
+                      src="../assets/images/logo/rezy.png"
+                      alt=""
+                  /></a>
+                </div>
+                <h2 style="text-decoration: underline">
+                  Complete Registration
+                </h2>
+                <!-- <h6>
+                  Already have an account?
+                  <a class="text-primary" href="login.html">login in here</a>
+                </h6> -->
+              </div>
+              <form name="form" id="sign-up-form" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label class="form-label" for="LoggingName">FirstName</label>
+                  <input
+                    id="LoggingName"
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter your FirstName"
+                    name="firstname"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="mb-2" for="LoggingName">LastName</label>
+                  <input
+                    id="LoggingName"
+                    class="form-control"
+                    type="text"
+                    name="lastname"
+                    placeholder="Enter your LastName"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="LoggingEmailAddress"
+                    >Email Address</label
+                  >
+                  <input
+                    id="LoggingEmailAddress"
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="LoggingPhoneNumberAddress"
+                    >PhoneNumber</label
+                  >
+                  <input
+                    id="LoggingPhoneNumber"
+                    class="form-control"
+                    type="tel"
+                    name="phonenumber"
+                    placeholder="Enter your PhoneNumber"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="LoggingProfileImage"
+                    >ProfileImage</label
+                  >
+                  <input
+                    id="LoggingProfileImage"
+                    class="form-control"
+                    type="file"
+                    required
+                    placeholder="Enter your image"
+                    name="profilepicture"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="Gender">Gender</label>
+                  <select name="Gender" class="form-control" required>
+                    <option value="none" disabled>--select gender--</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Others</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="loggingPassword"
+                    >Password</label
+                  >
+                  <div class="input-group group-input">
+                    <input
+                      id="loggingPassword"
+                      class="form-control showhide-password"
+                      type="password"
+                      placeholder="Enter your password"
+                      name="password"
+                      required
+                    /><span
+                      class="input-group-text toggle-show fa fa-eye"
+                    ></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-label">Confirm Password</label>
+                  <input
+                    type="password"
+                    class="form-control showhide-password"
+                    name="confirm-password"
+                    placeholder="Confirm Password"
+                    required
+                    oninput="checkingForPassword(this.value)"
+                    required
+                  /><span class="input-group-text toggle-show fa fa-eye"></span>
+                  <small id="error-message" style="color: red"></small>
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    class="form-checkbox rounded"
+                    id="checkbox-signin"
+                  />
+                  <label class="ms-2" for="checkbox-signin"
+                    >I accept
+                    <a href="test.html" class="text-primary"
+                      >Terms and Conditions</a
+                    ></label
+                  >
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-paper-plane"></i> Register
+                  </button>
+                </div>
+
+                <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdPHj4nAAAAAHepuYSdOPP5zqMhUuVMNsoQddg2"></script>
+              </form>
+              <div class="auth-footer">
+                <h5 class="auth-with">or register in with</h5>
+                <ul class="login-list">
+                  <li>
+                    <a class="bg-fb" href="javascript:void(0);">
+                      <img
+                        class="img-fluid"
+                        src="../assets/images/auth/1.png"
+                        alt="facebook"
+                      />facebook</a
+                    >
+                  </li>
+                  <li>
+                    <a class="bg-google" href="javascript:void(0);">
+                      <img
+                        class="img-fluid"
+                        src="../assets/images/auth/2.png"
+                        alt="google"
+                      />google</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- authentication end-->
+    <!-- footer start-->
+    <footer class="codex-footer">
+      <p>Copyright 2022-23 © dmeki All rights reserved.</p>
+    </footer>
+    <!-- footer end-->
+    <!-- back to top start //-->
+    <div class="scroll-top"><i class="fa fa-angle-double-up"></i></div>
+    <!-- back to top end //-->
+    <!-- main jquery-->
+    <script src="../assets/js/jquery-3.6.0.js"></script>
+    <!-- Theme Customizer-->
+    <script src="../assets/js/layout-storage.js"></script>
+    <script src="../assets/js/customizer.js"></script>
+    <!-- Feather icons js-->
+    <script src="../assets/js/icons/feather-icon/feather.js"></script>
+    <!-- Bootstrap js-->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Scrollbar-->
+    <script src="../assets/js/vendors/simplebar.js"></script>
+    <!-- Custom script-->
+    <script src="../assets/js/custom-script.js"></script>
+    <script src="/AdminFrontEnd/js/completeRegistration.js"></script>
+    <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+          const token = await grecaptcha.enterprise.execute(
+            "6LdPHj4nAAAAAHepuYSdOPP5zqMhUuVMNsoQddg2",
+            { action: "SIGNUP" }
+          );
+          // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+          // reCAPTCHA Enterprise to the end user's browser.
+          // This token must be validated by creating an assessment.
+          // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+        });
+      }
+    </script>
+  </body>
+</html>

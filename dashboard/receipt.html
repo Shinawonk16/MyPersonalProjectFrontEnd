@@ -1,0 +1,290 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Invoice Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../dashboard/css/modern-normalize.css">
+  <link rel="stylesheet" href="../dashboard/css/web-base.css">
+  <link rel="stylesheet" href="../dashboard/css/invoice.css">
+  <!-- <script type="text/javascript" src="../dashboard/js/scripts.js"></script> -->
+</head>
+<style>
+  /**
+ * Extracted from: SweetAlert
+ * Modified by: Istiak Tridip
+ */
+.success-checkmark {
+    width: 80px;
+    height: 115px;
+    margin: 0 auto;
+    
+    .check-icon {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        border-radius: 50%;
+        box-sizing: content-box;
+        border: 4px solid #4CAF50;
+        
+        &::before {
+            top: 3px;
+            left: -2px;
+            width: 30px;
+            transform-origin: 100% 50%;
+            border-radius: 100px 0 0 100px;
+        }
+        
+        &::after {
+            top: 0;
+            left: 30px;
+            width: 60px;
+            transform-origin: 0 50%;
+            border-radius: 0 100px 100px 0;
+            animation: rotate-circle 4.25s ease-in;
+        }
+        
+        &::before, &::after {
+            content: '';
+            height: 100px;
+            position: absolute;
+            background: #FFFFFF;
+            transform: rotate(-45deg);
+        }
+        
+        .icon-line {
+            height: 5px;
+            background-color: #4CAF50;
+            display: block;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 10;
+            
+            &.line-tip {
+                top: 46px;
+                left: 14px;
+                width: 25px;
+                transform: rotate(45deg);
+                animation: icon-line-tip 0.75s;
+            }
+            
+            &.line-long {
+                top: 38px;
+                right: 8px;
+                width: 47px;
+                transform: rotate(-45deg);
+                animation: icon-line-long 0.75s;
+            }
+        }
+        
+        .icon-circle {
+            top: -4px;
+            left: -4px;
+            z-index: 10;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            box-sizing: content-box;
+            border: 4px solid rgba(76, 175, 80, .5);
+        }
+        
+        .icon-fix {
+            top: 8px;
+            width: 5px;
+            left: 26px;
+            z-index: 1;
+            height: 85px;
+            position: absolute;
+            transform: rotate(-45deg);
+            background-color: #FFFFFF;
+        }
+    }
+}
+
+@keyframes rotate-circle {
+    0% {
+        transform: rotate(-45deg);
+    }
+    5% {
+        transform: rotate(-45deg);
+    }
+    12% {
+        transform: rotate(-405deg);
+    }
+    100% {
+        transform: rotate(-405deg);
+    }
+}
+
+@keyframes icon-line-tip {
+    0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+    }
+    84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+    }
+    100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+    }
+}
+
+@keyframes icon-line-long {
+    0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+    }
+    100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+    }
+}
+</style>
+
+<body>
+  <div class="success-checkmark">
+    <div class="check-icon">
+      <span class="icon-line line-tip"></span>
+      <span class="icon-line line-long"></span>
+      <div class="icon-circle"></div>
+      <div class="icon-fix"></div>
+    </div>
+  </div>
+  
+
+  <div class="web-container">
+
+    <div class="page-container">
+      Page
+      <span class="page"></span>
+      of
+      <span class="pages"></span>
+    </div>
+
+    <div class="logo-container">
+        <img src="/themebootstrap/assets/images/logo/rezy.png" alt="Logo" width="100" height="100" style= "display: block;border-radius: 50%;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;">
+    </div>
+
+    <div style="display: flex;justify-content: center;">
+      <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Cart Details</h3>
+    </div>
+
+    <table class="line-items-container">
+      <thead>
+        <tr>
+          <th class="heading-quantity">Quantity</th>
+          <th class="heading-description">Description</th>
+          <th class="heading-price">Price</th>
+          <th class="heading-subtotal">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="cart-info">
+        <!-- <tr>
+          <td>2</td>
+          <td>Blue large widgets</td>
+          <td class="right">$15.00</td>
+          <td class="bold">$30.00</td>
+        </tr> -->
+      </tbody>
+    </table>
+
+    <hr>
+      
+      <div style="display: flex;justify-content: center;">
+        <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Payment Info</h3>
+      </div>
+
+      <table class="line-items-container">
+
+        <tbody id="payment-info">
+          <!-- <tr>
+            <td>Status</td>
+            <td class="right">SUCCESS</td>
+          </tr>
+          <tr>
+            <td>Bank name</td>
+            <td class="right">TEST BANT</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td class="right">zafrullahdaprince@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Paid with</td>
+            <td class="right">CARD</td>
+          </tr>
+          <tr>
+            <td>Card Type</td>
+            <td class="right">Visa</td>
+          </tr>
+          <tr>
+            <td>currency</td>
+            <td class="right">NGN</td>
+          </tr>
+          <tr>
+            <td>Reference number</td>
+            <td class="right">3f26a13f-e7a0-44a3-851c-30939383eaba</td>
+          </tr> -->
+        </tbody>
+      </table>
+    <hr>
+
+    <table class="line-items-container">
+      <thead>
+        <tr>
+          <td class="large">Total</td>
+          <td class="large total right">$105.00</td>
+        </tr>
+
+      </thead>
+    </table>
+
+    <div class="footer">
+      <div class="footer-info">
+        <span>shinawonk@gmail.com</span> |
+        <span>07054770135</span> |
+        <span>www.shopezy.com</span>
+      </div>
+      <div class="footer-thanks">
+        <img src="https://github.com/anvilco/html-pdf-invoice-template/raw/main/img/heart.png" alt="heart">
+        <span>Thank you!</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="../dashboard/js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>
